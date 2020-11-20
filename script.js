@@ -6597,7 +6597,11 @@ function getRandomColor() {
   ];
 
   // Your code below
+  const newQuoteButton = document.querySelector('#quote-box .buttons .button');
+  newQuoteButton.style.backgroundColor = randomColor;
 
+  document.body.style.backgroundColor = randomColor;
+  document.body.style.color = randomColor;
   // Your code above
 }
 
@@ -6610,7 +6614,11 @@ function getRandomQuote() {
   currentAuthor = randomQuote.author;
 
   // Your code below
+  const quoteText = document.getElementById("text");
+  const quoteAuthor = document.getElementById("author");
 
+  quoteText.textContent = currentQuote;
+  quoteAuthor.textContent = currentAuthor;
   // Your code above
 
   getRandomColor();
@@ -6619,5 +6627,6 @@ function getRandomQuote() {
 getRandomQuote();
 
 // Your code below
-
+const newQuoteButton = document.getElementById("new-quote");
+newQuoteButton.addEventListener("click", getRandomQuote);
 // Your code above
