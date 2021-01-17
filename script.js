@@ -6588,9 +6588,6 @@ const colors = [
   '#73A857'
 ];
 
-let currentQuote = '';
-let currentAuthor = '';
-
 function getRandomColor() {
   const randomColor = colors[
     Math.floor(Math.random() * colors.length)
@@ -6610,23 +6607,20 @@ function getRandomQuote() {
     Math.floor(Math.random() * quotesData.length)
   ];
 
-  currentQuote = randomQuote.text;
-  currentAuthor = randomQuote.author;
-
   // Your code below
   const quoteText = document.getElementById("text");
   const quoteAuthor = document.getElementById("author");
 
-  quoteText.textContent = currentQuote;
-  quoteAuthor.textContent = currentAuthor;
-  // Your code above
+  quoteText.textContent = randomQuote.text;
+  quoteAuthor.textContent = randomQuote.author;
 
   getRandomColor();
+  // Your code above
 }
 
+// Your code below
 getRandomQuote();
 
-// Your code below
 const newQuoteButton = document.getElementById("new-quote");
 newQuoteButton.addEventListener("click", getRandomQuote);
 // Your code above
